@@ -19,10 +19,9 @@ int main()
     else
     {
         int sqrroot = pow(double (n),0.5);  // Vedic maths says, if there exists any factor, it will appear up to a square root of a number.
-        if (sqrroot % 2 == 0)               // if square root of any number is even, that means that number is prime. No need to call function.
-            printf("Number %d is prime.",n);
-        else
-            printf("Number %d is %s.\n", n, (isprime(n,sqrroot)?"prime":"not prime"));    // ensuring that n and square root are odd numbers.
+        if (sqrroot % 2 == 0)               // if square root of any number is even, make it odd.
+            sqrroot++;
+        printf("Number %d is %s.\n", n, (isprime(n,sqrroot)?"prime":"not prime"));    // ensuring that n and square root are odd numbers.
     };
     return 0;
 }
